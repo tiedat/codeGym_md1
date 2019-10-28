@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vitTeo</title>
+</head>
+<body>
+<script>
+    let regexp = /^09[6-8]\d{7}$/;
+    let array = ['0967924958','0978989899','0982342345','012367924958'];
+    function search(regexp,arr) {
+        let result = [];
+        for (let i = 0; i <arr.length; i++ ){
+            if ( regexp.test(arr[i]) ){
+                result.push(arr[i]);
+            }
+        }
+        return  result
+    }
+    document.write( search(regexp, array).toString());
+</script>
+</body>
+</html>
