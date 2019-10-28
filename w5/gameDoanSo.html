@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gameDoanSo</title>
+</head>
+<body>
+<script>
+    // function binary search
+    function binSearch(arr, data) {
+        arr.sort(function (a, b) {
+            return a - b;
+        });
+        let begin = 0;
+        let end = arr.length - 1;
+        let mid = 0;
+        while (begin < end) { // tim kiem den khi chi con 1 phan tu
+            mid = Math.floor(begin + (end - begin) / 2);
+            if (arr[mid] === data)
+                return mid;
+            if (data > arr[mid]) {
+                begin = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        if (arr[end] === data)
+            return end;
+    }
+
+    // function search
+    function search(arr, data) {
+        for ( let i = 0; i < arr.length; i++) {
+            if ( arr[i] === data )
+                return i;
+        }
+    }
+
+
+    let nums = [];
+    for ( let i = 0; i < 100; i++) {
+        nums[i] = Math.floor(Math.random()*101);
+    }
+
+
+    // random value of data
+    let val = Math.floor(Math.random()*101);
+
+    let retVal1 = binSearch(nums, val);
+    let retVal2 = search(nums, val);
+
+
+</script>
+</body>
+</html>
