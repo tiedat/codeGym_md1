@@ -5,14 +5,39 @@
     <title></title>
 </head>
 <body>
-<form style="position: absolute; top: 50px; left: 500px;">
-    <span>Good  </span><input type="button"><br><br>
-    <span>Fast  </span><input type="button"><br><br>
-    <span>Cheap </span><input type="button"><br><br>
-</form>
+
+<div class="good_cheap_fast">
+    <input type="checkbox" id="idGood" value="good" onclick="check(this.value)"><h4>Good</h4>
+    <br/>
+    <input type="checkbox" id="idCheap" value="cheap" onclick="check(this.value)"><h4>Cheap</h4>
+    <br/>
+    <input type="checkbox" id="idFast" value="fast" onclick="check(this.value)"><h4>Fast</h4>
+</div>
 
 <script>
+    function check(value) {
+        let good = document.getElementById('idGood');
+        let cheap = document.getElementById('idCheap');
+        let fast = document.getElementById('idFast');
 
+        switch (value) {
+            case 'good' :
+                if (cheap.checked === true && good.checked === true) {
+                    fast.checked = false;
+                }
+                break;
+            case 'cheap' :
+                if (fast.checked === true && cheap.checked === true) {
+                    good.checked = false;
+                }
+                break;
+            case 'fast':
+                if (good.checked === true && fast.checked === true) {
+                    cheap.checked = false;
+                }
+                break;
+        }
+    }
 </script>
 </body>
 </html>
