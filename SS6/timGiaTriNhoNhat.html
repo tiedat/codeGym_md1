@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timGiaTriNhoNhat</title>
+</head>
+<body>
+<p>arr1 = [3, 5, 1, 8, -3, 7, 8]</p>
+<span id="arr1"></span>
+<p>arr2 = [7, 12, 6, 9, 20, 56, 89]</p>
+<span id="arr2"></span>
+<p>arr3 = []</p>
+<span id="arr3"></span>
+<p>arr4 = [0, 0, 0, 0, 0, 0]</p>
+<span id="arr4"></span>
+<script>
+    let arr = [[3, 5, 1, 8, -3, 7, 8], [7, 12, 6, 9, 20, 56, 89], [], [0, 0, 0, 0, 0, 0]];
+
+    function minArray(arr) {
+        if (arr.length === 0)
+            return -1;
+        let min = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }return min
+    }
+    for(i=0;i<4;i++)
+    document.getElementById("arr"+[i+1]).innerHTML = minArray(arr[i]);
+    /*document.getElementById("arr2").innerHTML = minArray(arr2);
+    document.getElementById("arr3").innerHTML = minArray(arr3);
+    document.getElementById("arr4").innerHTML = minArray(arr4);*/
+
+
+</script>
+</body>
+</html>

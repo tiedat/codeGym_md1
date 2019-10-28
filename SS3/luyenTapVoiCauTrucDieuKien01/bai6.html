@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculateCommission</title>
+</head>
+<body>
+<script>
+    // Cửa hàng của bạn nhận gửi bán sản phẩm cho một công ty khác và sau mỗi tháng bạn cần tính toán số tiền hoa hồng bạn nhận được.
+    // Với mức hoa hồng theo doanh số bán hàng như sau:
+    // 5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.
+    // 10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.
+    // 20 % nếu tổng doanh số là lớn hơn 300 triệu.
+
+    let revenue = Number(prompt("How much is your revenue in this month:"));
+    let commission = 0;
+
+    while ( revenue < 0 ) {
+        alert("Revenue is INVALID")
+    }
+    if ( revenue > 300 ) {
+        commission = revenue * 0.2;
+    } else if ( revenue > 100 ) {
+        commission = revenue * 0.1;
+    } else commission = revenue * 0.05;
+
+    alert("Your commission in this month is: " + commission);
+</script>
+</body>
+</html>

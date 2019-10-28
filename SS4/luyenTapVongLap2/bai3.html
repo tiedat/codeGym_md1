@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>printTriangle</title>
+</head>
+
+<span>triangle1</span>
+<p style="text-align: left;" id="leftTop" >x</p>
+<span>triangle2</span>
+<p style="text-align: right;" id="rightTop" >x</p>
+<span>triangle3</span>
+<p style="text-align: left;" id="leftButtom" >x</p>
+<span>triange4</span>
+<p style="text-align: right;" id="rightBottom">x</p>
+
+
+
+<body>
+<script>
+    let triangleB,triangleT;
+    triangleB = "";
+    triangleT = "";
+    for (let i = 1; i <= 5; i++ ) {
+        for ( let j = 1; j <= i; j++) {
+            triangleB += " * ";
+        }
+        triangleB += "<br>";
+    }
+
+    for (let a = 5; a >=0 ; a-- ) {
+        for ( let b = 1; b <= a; b++) {
+            triangleT += " * ";
+        }
+        triangleT += "<br>";
+    }
+    document.getElementById("leftButtom").innerHTML = triangleB;
+    document.getElementById("rightBottom").innerHTML = triangleB;
+    document.getElementById("leftTop").innerHTML = triangleT;
+    document.getElementById("rightTop").innerHTML = triangleT;
+
+
+</script>
+
+</body>
+</html>

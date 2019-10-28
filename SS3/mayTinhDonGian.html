@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    button{
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 4px;
+    }
+    #screen{
+        width: 170px;
+        height: 40px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        text-align: right;
+        background-color: black;
+        color: white;
+        padding-right: 5px;
+    }
+    .operator{
+        background-color: orange;
+        color: #ffffff;
+    }
+</style>
+<body>
+<input id="screen" value="">
+<br>
+<button onclick="clickNumber(1)">1</button>
+<button onclick="clickNumber(2)">2</button>
+<button onclick="clickNumber(3)">3</button>
+<button class="operator" onclick="clickNumber('+')">+</button>
+<br>
+<button onclick="clickNumber(4)">4</button>
+<button onclick="clickNumber(5)">5</button>
+<button onclick="clickNumber(6)">6</button>
+<button class="operator" onclick="clickNumber('-')">-</button>
+<br>
+<button onclick="clickNumber(7)">7</button>
+<button onclick="clickNumber(8)">8</button>
+<button onclick="clickNumber(9)">9</button>
+<button class="operator" onclick="clickNumber('*')">x</button>
+<br>
+<button onclick="clearScreen()">C</button>
+<button onclick="clickNumber(0)">0</button>
+<button onclick="calculator()">=</button>
+<button class="operator" onclick="clickNumber('/')">/</button>
+
+<script>
+    let screen = document.getElementById("screen");
+    function clickNumber(value) {
+        screen.value += value;
+    }
+    function calculator() {
+        let result = eval(screen.value);
+        screen.value = result;
+    }
+    function clearScreen() {
+        screen.value = "";
+    }
+</script>
+</body>
+</html>

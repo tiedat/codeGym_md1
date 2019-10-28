@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyenDoiFeetMeters</title>
+</head>
+<body>
+<form style="position:absolute; left: 450px; top: 50px">
+    <p> Feet </p>
+    <input type="number" id="feet" placeholder="Feet"
+           oninput="convertFeet2Meters(this.value)"
+           onchange ="convertFeet2Meters(this.value)" >
+</form>
+<form style="position:absolute; left: 750px; top: 50px">
+    <p> Meters </p>
+    <input type="number" id="meters" placeholder="Meters"
+           oninput="convertMeters2Feet(this.value)"
+           onchange ="convertMeters2Feet(this.value)" >
+
+</form>
+<script>
+    function convertFeet2Meters(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("meters").value = valNum * 0.305;
+    }
+    function convertMeters2Feet(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("feet").value = valNum * 3.279;
+    }
+</script>
+</body>
+</html>

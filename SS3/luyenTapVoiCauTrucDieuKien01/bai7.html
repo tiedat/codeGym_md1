@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>telephoneCharges</title>
+</head>
+<body>
+<script>
+    // Viết chương trình để tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:
+    // Phí thuê bao bắt buộc là 25 nghìn.
+    // 600 đồng cho mỗi gọi của 50 phút đầu tiên.
+    // 400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+    // 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+
+    let minutesCalled = Number(prompt("How many minutes have you called ?"));
+    let charge = 25000;
+
+    do {
+        alert("Do you have a phone?");
+        minutesCalled = Number(prompt("How many minutes have you called ?"));
+    }
+    while ( minutesCalled < 0 )
+
+    if ( minutesCalled <= 50 ) {
+        charge = minutesCalled * 600 + 25000;
+    } else if ( minutesCalled <= 200 ) {
+            charge = ( minutesCalled - 50 ) * 400 + 25000 + 600 * 50;
+    } else charge = ( minutesCalled - 200 ) * 200 + 600 * 50 + 150 * 400 + 25000;
+
+    alert("Telephone charges of your family is " + charge);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<form style="position:absolute; left: 550px; top: 50px">
+    <span> Radius </span>
+    <input type="number" id="Radius" placeholder="Radius"
+           oninput="calculateAndShow(this.value)"
+           onchange ="calculateAndShow(this.value)" >
+    <br>
+    <br>
+    <span> Result: </span>
+    <span id="result"></span>
+</form>
+<script>
+    function calculateAndShow(radius) {
+        let area = Math.PI * radius * radius;
+        let perimeter = 2 * Math.PI * radius;
+        document.getElementById('result').innerHTML = 'Area: ' + area + ' and Perimeter: ' + perimeter;
+    }
+</script>
+</body>
+</html>

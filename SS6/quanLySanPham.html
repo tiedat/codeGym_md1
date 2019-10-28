@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quanLySanPham</title>
+</head>
+<body>
+<h1> Add New Product </h1>
+<input type="text" id="screen" placeholder="New Product">
+<input type="button" value="Add" onclick="addNewProduct()">
+<br>
+<h2> Display All Product </h2>
+<span> Product Name </span>
+<span style="text-align: right" id="amount"></span>
+<p id="display"></p>
+
+
+<script>
+let allProduct = [];
+// thêm sản phẩm mới vào mảng
+function addArray(newProduct) {
+    allProduct.push(newProduct);
+}
+
+// hàm hiển thị
+
+function addNewProduct() {
+    let nameProduct = document.getElementById('screen').value;
+    addArray(nameProduct);
+    let content = '<br>';
+    for (let i = 0; i < allProduct.length; i++) {
+        content = content
+            + '<form>'
+            + '<input type="text" id="product' + i + '" onclick="showInScreen(this.value)" value="' + allProduct[i] + '">'
+            + '<button onclick="edit(this.id)" id="product' + i + '">Edit</button>'
+            + '<button onclick="deleteProduct(this.id)" id="product' + i + '">Delete</button>'
+            + '</form>'
+            + '<br>';
+    }
+    document.getElementById('screen').value = '';
+    document.getElementById('display').innerHTML = content;
+    document.getElementById('amount').innerHTML = allProduct.length + ' products';
+}
+
+
+// hàm hiện tên sp lên screen
+function showInScreen(nameProduct) {
+    for (let i = 0; i < allProduct.length; i++) {
+        if(nameProduct === allProduct[i])
+            document.getElementById('screen').value = document.getElementById('product' + i).value;
+    }
+}
+// hàm thay đổi thông tin
+function edit(producti) {
+    let nameProduct = document.getElementById('screen').value;
+    let content = '<br>';
+    for (let i = 0; i < allProduct.length; i++) {
+        if (producti === 'product' + i) {
+            allProduct[i] = nameProduct;
+        }
+        content = content
+            + '<form>'
+            + '<input type="text" id="product' + i + '" onclick="showInScreen(this.value)" value="' + allProduct[i] + '">'
+            + '<button onclick="edit(this.id)" id="product' + i + '">Edit</button>'
+            + '<button onclick="deleteProduct(this.id)" id="product' + i + '">Delete</button>'
+            + '</form>'
+            + '<br>';
+    }
+    document.getElementById('screen').value = '';
+    document.getElementById('display').innerHTML = content;
+    document.getElementById('amount').innerHTML = allProduct.length + ' products';
+}
+
+// hàm xóa sản phẩm
+function deleteProduct(producti) {
+    let content = '<br>';
+    for (let i = 0; i < allProduct.length; i++) {
+        if (producti === 'product' + i) {
+            let index = allProduct.indexOf(allProduct[i]);
+            allProduct.splice(index,1);
+        }
+        content = content
+            + '<form>'
+            + '<input type="text" id="product' + i + '" onclick="showInScreen(this.value)" value="' + allProduct[i] + '">'
+            + '<button onclick="edit(this.id)" id="product' + i + '">Edit</button>'
+            + '<button onclick="deleteProduct(this.id)" id="product' + i + '">Delete</button>'
+            + '</form>'
+            + '<br>';
+    }
+    document.getElementById('screen').value = '';
+    document.getElementById('display').innerHTML = content;
+    document.getElementById('amount').innerHTML = allProduct.length + ' products';
+}
+
+
+</script>
+</body>
+</html>

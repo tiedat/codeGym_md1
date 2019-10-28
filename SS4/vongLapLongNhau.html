@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bangDuLieu</title>
+</head>
+<body>
+<script>
+    // can not create table
+    /*let i;
+    let j;
+    let a = "";
+    for (i = 1; i <= 10; i++) {
+        for (j = 1; j <= 10; j++) {
+            a += i * j + " ";
+        }
+        a += "<br>";
+    }
+    document.write(a);
+     */
+
+    //create table
+    let sout, i, j;
+    i = j = 1;
+    sout = "<table border='1px' width='300px' cellspacing='0px' cellpadding='3px'>";
+    //javascript loops with for()
+    /*for (; i <= 10; i++) {
+        //create a row with begin tag <tr> (table row)
+        sout = sout + "<tr>";
+        for (; j <= 10; j++) {
+            //create box with value i*j by <td></td> (table data)
+            //if trans <td> to <th> will create a table header (heading is centered and bold)
+            sout = sout + "<th>" + i * j + "</th>";
+        }
+        //close tag </tr>
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+    */
+
+    while (i <= 10) {
+        sout = sout + "<tr>";
+        while (j <= 10) {
+            sout = sout + "<td>" + i * j + "</td>";
+            j++;
+        }
+        sout = sout + "</tr>";
+        //tra gia tri lai cho j * bien cuc bo va bien toan cuc
+        j = 1;
+        i++;
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+    </script>
+</body>
+</html>

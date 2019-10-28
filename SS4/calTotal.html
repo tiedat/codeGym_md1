@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calTotal</title>
+</head>
+<body>
+<span id="message"></span>
+<script>
+    let x = parseInt(prompt("input a number: "));
+    let i = 0;
+    let totalNumber = 0;
+    let mes = "Total from 1 to " + x + " is: ";
+    for (;i <= x; i++) {
+        totalNumber += i;
+    }
+    document.getElementById("message").innerText = mes + totalNumber;
+</script>
+</body>
+</html>

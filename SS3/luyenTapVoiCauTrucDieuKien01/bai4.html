@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findMax</title>
+</head>
+<body>
+<script>
+
+    let a = Number(prompt("Enter number a: "));
+    let b = Number(prompt("Enter number b: "));
+    let c = Number(prompt("Enter number c: "));
+    let max = a;
+
+    if ( b > max ) {
+        max = b;
+        if ( c > max ) {
+            max = c;
+        }
+    } else
+        if ( c > max ) {
+            max = c;
+        }
+    alert("The max number is " + max);
+
+</script>
+
+</body>
+</html>

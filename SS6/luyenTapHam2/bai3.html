@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<form style="position:absolute; left: 550px; top: 50px">
+    <span> Argument </span>
+    <input type="number" id="Argument" placeholder="Argument"
+           oninput="calFactorial(this.value)"
+           onchange ="calFactorial(this.value)" >
+    <br>
+    <br>
+    <span> Factorial of argument: </span>
+    <span id="result"></span>
+</form>
+<script>
+    function calFactorial(valNum) {
+        if ( isNaN(valNum) === false) {
+            let factorial = 1;
+            for (let i = 2; i <= valNum; i++)
+                factorial *= i;
+            document.getElementById('result').innerHTML = factorial;
+        }
+    }
+</script>
+</body>
+</html>

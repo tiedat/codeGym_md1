@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>drawx</title>
+</head>
+<body>
+<form>
+    <p>Width:</p>
+    <label for="inputWidth"></label><input type="text" id="inputWidth"><br>
+    <p>Height:</p>
+    <input type="text" id="inputHeight"><br>
+    <br>
+    <button type="button" onclick="draw()">Draw</button>
+    <br>
+    <p id="rectangle"></p>
+
+</form>
+<script>
+    function draw() {
+        let x = parseInt(document.getElementById("inputWidth").value);
+        let y = parseInt(document.getElementById("inputHeight").value);
+        let i;
+        let j;
+        document.getElementById("rectangle").innerHTML = "";
+        for (j = 0; j < y; j++) {
+            for (i = 0; i < x; i++) {
+                document.getElementById("rectangle").innerHTML += "* ";
+            }
+            document.getElementById("rectangle").innerHTML += "<br>";
+        }
+    }
+</script>
+</body>
+</html>

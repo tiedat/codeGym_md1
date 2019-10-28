@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyenTapMang1</title>
+</head>
+<body>
+<script>
+    // Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử
+    // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+
+    let array = [];
+    let bigger10 = [];
+    let count = 0;
+    for ( let i = 0; i < 10; i++) {
+        array[i] = Math.floor(Math.random()*200 - 100);
+        if (array[i] > 10) {
+            bigger10.push(array[i]);
+            count++;
+        }
+    }
+
+    document.write(
+        'Array: ' + array.toString() + '<br>' +
+        'Numbers are bigger than 10: ' + bigger10.toString() + '<br>' +
+        'Amount: ' + count
+        )
+</script>
+</body>
+</html>

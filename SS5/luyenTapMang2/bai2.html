@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bai2</title>
+</head>
+<body>
+<script type="text/javascript">
+	let x = ['c', 's', 'c', '2', '6', '1'];
+	let first, last;
+	first = 0;
+	last = x.length - 1;
+
+	while (first < last) {
+	    let b = x[first];
+	    x[first] = x[last];
+	    x[last] = b;
+	    first++;
+	    last--;
+	}
+	alert(x.toString());
+</script>	
+</body>
+</html>

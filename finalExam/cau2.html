@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau2</title>
+</head>
+<body>
+<p id ='result'></p>
+<script>
+    function tryRemoveFromArray( arr, index ) {
+        if ( isNaN(index) || index < 0 || index >= arr.length)
+            return arr;
+        else {
+            arr.splice( index, 1 );
+            return arr;
+        }
+    }
+
+    let
+        index1 = 2,
+        index2 = 0,
+        index3 = 7,
+        index4 = -2;
+
+    document.getElementById('result').innerHTML =
+        tryRemoveFromArray([12,6,3,7,21,5,7],index1) + '\n' +
+        + tryRemoveFromArray([12,6,3,7,21,5,7],index2) + '\n' +
+        + tryRemoveFromArray([12,6,3,7,21,5,7],index3) + '\n' +
+        + tryRemoveFromArray([12,6,3,7,21,5,7],index4);
+
+</script>
+</body>
+</html>

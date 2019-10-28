@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demSoLanXuatHien</title>
+</head>
+<body>
+<script>
+    // function binary search
+    function binSearch(arr, data) {
+        let begin = 0;
+        let end = arr.length - 1;
+        let mid = 0;
+        while (begin < end) { // tim kiem den khi chi con 1 phan tu
+            mid = Math.floor(begin + (end - begin) / 2);
+            if (arr[mid] === data)
+                return mid;
+            if (data > arr[mid]) {
+                begin = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        if (arr[end] === data)
+            return end;
+    }
+
+    // function count number of data in array
+    function count(arr, data) {
+        let count = 0;
+        let position = binSearch(arr, data);
+        if (position > -1) {
+            ++count;
+            for (let i = position-1; i > 0; --i) {
+                if (arr[i] === data) {
+                    ++count;
+                }
+                else {
+                    break;
+                }
+            }
+
+            for (let i = position+1; i < arr.length; ++i) {
+                if (arr[i] === data) {
+                    ++count;
+                }
+                else {
+                    break;
+                }
+            }
+        } //end if
+        return count;
+    }
+
+    let nums = [];
+    // random value of element in array
+    for ( let i = 0; i < 100; i++) {
+        nums[i] = Math.floor(Math.random()*101);
+    }
+
+    //  sort array increasing
+    nums.sort(function (a, b) {
+        return a - b;
+    });
+
+    // random value of data
+    let val = Math.floor(Math.random()*101);
+    let retVal = count(nums, val);
+    document.write(
+        "Found " + retVal + " occurrences of " + val + "." + '\n'
+        + nums.toString()
+    );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2_1</title>
+</head>
+<body>
+<script>
+    let login = prompt("Input your role: ");
+    let message;
+    if (login === 'Employee') {
+        message = 'Hello';
+    } else if (login === 'Director') {
+        message = 'Greetings';
+    } else if (login === '') {
+        message = 'No login';
+    } else {
+        message = '';
+    }
+    alert(message)
+</script>
+</body>
+</html>

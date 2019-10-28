@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    // Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    // Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+
+    let array = [];
+
+
+    for ( let i = 0; i < 10; i++) {
+        array[i] = Math.floor(Math.random()*200 - 100);
+    }
+
+    let max = array[0];
+    let index = 0;
+
+    for ( let i = 0; i < 10; i++) {
+        if (array[i + 1] > max) {
+            max = array[i + 1];
+            index = i + 1;
+        }
+    }
+
+    document.write(
+        'Array: ' + array.toString() + '<br>' +
+        'Max of array is: ' + max + '<br>' +
+        'At index: ' + index
+    )
+</script>
+</body>
+</html>

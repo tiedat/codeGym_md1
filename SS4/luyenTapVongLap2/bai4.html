@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rectangle</title>
+</head>
+<body>
+<p style="text-align: center;" id="draw"></p>
+<script>
+    let rectangle = "";
+    let i,j;
+
+    for ( i = -5; i <= 5; i ++) {
+        for (j = -20 ; j <= 20; j++) {
+            if (Math.abs(j) === 20 || Math.abs(i) === 5) {
+                rectangle += "* ";
+            } else rectangle += " _ ";
+        }
+        rectangle += "<br>";
+    }
+
+    document.getElementById("draw").innerHTML = rectangle;
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai7</title>
+</head>
+<body>
+<h1> Solve the quadratic equation ax**2 + b*x + c = 0 </h1>
+<script>
+    let a, b, c, x, delta, x1, x2;
+    a =  Number(prompt("Enter number a !== 0:"));
+    b =  Number(prompt("Enter number b:"));
+    c =  Number(prompt("Enter number c:"));
+    let message = "the quadratic equation "+ a + "* x ** 2 + " + b + " * x + " + c +" = 0 has ";
+    delta = b**2 - 4 * a * c;
+
+    if ( b === c === 0 )
+        message += "unlimited roots";
+    else {
+        if ( delta === 0 ) {
+            x = - b / ( 2 * a );
+            message += "one root " + x;
+        } else if ( delta > 0 ) {
+            x1 = (-b + Math.sqrt(delta)) / ( 2 * a );
+            x2 = (-b - Math.sqrt(delta)) / ( 2 * a );
+            message += " two roots: " + x1 + " + " + x2;
+        } else message += "no root"
+    }
+
+document.write(message);
+
+</script>
+</body>
+</html>

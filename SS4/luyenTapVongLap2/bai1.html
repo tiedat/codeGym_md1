@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonacci</title>
+</head>
+<body>
+<script>
+    let Fibo1, Fibo2, Fibo3, i, fibo20;
+    Fibo1 = Fibo2 = 1;
+    i = 2;
+    fibo20 = "1 , 1, ";
+
+    do {
+        Fibo3 = Fibo2 + Fibo1;
+        fibo20 += Fibo3 + ", ";
+        Fibo1 = Fibo2;
+        Fibo2 = Fibo3;
+        i ++;
+    }
+    while (i < 100);
+
+    document.write(" This is Fibonacci Sequence: "+ fibo20);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau3</title>
+</head>
+<body>
+<script>
+    function isPrime(x) {
+        if ( isNaN(x) )
+            return false;
+        else if ( x < 2 )
+            return false;
+        else if ( x === 2 )
+            return true;
+        else {
+            for ( let i = 2; i < Math.sqrt(x) ; i++ ) {
+                if ( x % i === 0)
+                    return false
+            }
+            return true;
+        }
+    }
+
+    console.log( isPrime(0) );
+    console.log( isPrime(2) );
+</script>
+</body>
+</html>

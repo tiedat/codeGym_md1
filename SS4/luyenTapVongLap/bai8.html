@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doanSo</title>
+</head>
+<body>
+<h1> GAME : let guess a number </h1>
+<button type="button" onclick="play()">Play</button>
+<script>
+
+    function play() {
+        let min, max, x, y, i;
+
+        min = parseInt(prompt(" Enter range's min:  "));
+        max = parseInt(prompt(" Enter range's max:  "));
+
+        i = 1;
+
+        y =  Math.floor(Math.random()*( max - min + 1 )) + min ;
+
+        do {
+            x = parseInt(prompt("Let guess a number in range between " + min + " and " + max + " ( Round " + i + " )"));
+            if (x === y) {
+                alert(" you win ");
+                break;
+            } else if (x > y)
+                alert("your choice is bigger");
+            else
+                alert("your choice is smaller");
+            i++;
+        } while ( i <= 3 );
+
+        if ( x !== y )
+            alert(" you lose ");
+    }
+
+
+
+
+</script>
+</body>
+</html>

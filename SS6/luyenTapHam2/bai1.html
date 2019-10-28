@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<form style="position:absolute; left: 550px; top: 50px">
+    <span> Argument </span>
+    <input type="number" id="number" placeholder="Argument"
+           oninput="squareArgument(this.value)"
+           onchange ="squareArgument(this.value)" >
+    <br>
+    <span> Result square argument: </span>
+    <span id="result"></span>
+</form>
+<script>
+    document.getElementById('result').innerHTML = '';
+    function squareArgument(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById('result').innerHTML = valNum * valNum;
+    }
+
+</script>
+</body>
+</html>

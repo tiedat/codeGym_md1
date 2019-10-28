@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xayDungLopHinhChuNhat</title>
+</head>
+<body>
+<canvas id='Rectangle' height="500px" width="1000px" style="border: 1px solid seagreen; fill: seagreen;"></canvas>
+<script>
+    let Rectangle = function( width, height) {
+        this.width = width;
+        this.height = height;
+    };
+    Rectangle.prototype.getWidth = function() {
+        return this.width;
+    };
+    Rectangle.prototype.getHeight = function() {
+        return this.height;
+    };
+    Rectangle.prototype.setRectangle = function (wight, height) {
+        this.width = wight;
+        this.height = height;
+    };
+    Rectangle.prototype.calAreaRectangle = function () {
+        return this.width * this.height;
+    };
+    Rectangle.prototype.calPerimetersRectangle = function () {
+        return (this.height + this.width) * 2;
+    };
+
+    Rectangle.prototype.drawRectangle = function () {
+        // document.getElementById('Rectangle').height = this.height;
+        // document.getElementById('Rectangle').wight = this.width;
+        let r = document.getElementById("Rectangle");
+        let ctx = r.getContext("2d");
+        ctx.moveTo(0,0);
+        ctx.lineWidth = '3';
+        ctx.lineTo(this.width,0);
+        ctx.lineTo(this.width,this.height);
+        ctx.lineTo(0,this.height);
+        ctx.lineTo(0,0);
+        ctx.strokeStyle = 'blue';
+        ctx.fillStyle = 'red';
+        ctx.fillRect(0,0,this.width,this.height);
+        ctx.stroke();
+    };
+
+</script>
+</body>
+</html>

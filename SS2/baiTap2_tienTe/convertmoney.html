@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convert money</title>
+</head>
+<body>
+<div>
+    <form>
+        <label for="amount">Amount:</label>
+        <br>
+        <input id="amount" type="number"/>
+    </form>
+</div>
+
+<div>
+    <p>From currency</p>
+    <label>
+        <select id="fromCurrency">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select>
+    </label>
+</div>
+
+<div>
+    <p>From currency</p>
+    <label>
+        <select id="toCurrency">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select>
+    </label>
+</div>
+<br>
+<div>
+    <button type="button" onclick="convert()">Convert</button>
+</div>
+<br>
+<div>
+    <span>Result: </span>
+    <span id="result"></span>
+</div>
+
+<script src="functionConvert.js"></script>
+</body>
+</html>

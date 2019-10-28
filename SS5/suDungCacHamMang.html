@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>suDungCacHamMang</title>
+</head>
+<body>
+<script>
+
+// Bai 1
+    // let myColor = ["Red", "Green", "White", "Black"];
+    // //1st method
+    // alert(myColor.join());
+    // //2nd method
+    // alert(myColor.toString());
+
+// bai 2
+    // let num = Number(prompt("enter a number:"));
+    //
+    // let str = num.toString();
+    // let result = [str[0]];
+    //
+    // for (let x = 1; x < str.length; x++) {
+    //     if (str[x-1] % 2 === 0 && str[x] % 2 === 0)
+    //         result.push("-",str[x]);
+    //     else result.push(str[x]);
+    // }
+    // alert(result.join(""));
+
+// bai 3
+    let str = prompt("enter a text:");
+    let UPPER = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    let LOWER = "qwertyuiopasdfghjklzxcvbnm";
+    let result =  [];
+    for ( let i = 0; i < str.length; i++) {
+        if (UPPER.indexOf(str[i]) !== -1)
+            result.push(str[i].toLowerCase());
+        else if (LOWER.indexOf(str[i]) !== -1)
+            result.push(str[i].toUpperCase());
+        else result.push(str[i]);
+    }
+
+    alert(result.join(""));
+</script>
+</body>
+</html>

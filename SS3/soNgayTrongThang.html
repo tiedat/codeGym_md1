@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>soNgayTrongThan</title>
+</head>
+<body>
+<form>
+    Input month (from 1 to 12):
+    <br>
+    <label for="month">
+        <input type=number id="month">
+    </label>
+    <br>
+    <br>
+    <button type= button onclick="count()">xxx</button>
+    <br>
+    result:
+    <span id="result">Result</span>
+</form>
+<script>
+    function count() {
+        let a = "";
+        let x = Number(document.getElementById("month").value);
+        switch (x) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                a = "Month " + x + "st have " + "31 days";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                a = "Month " + x + "st have " + "30 days";
+                break;
+            case 2:
+                a = "Month 2st have 28 or 29 days";
+
+        }
+        document.getElementById("result").innerText = a;
+    }
+</script>
+</body>
+</html>

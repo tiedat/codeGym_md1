@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ValidateClassName</title>
+</head>
+<body>
+<script>
+    let patt = /^[CAP]\d{4}[GHILM]$/;
+
+    function isClassName(str) {
+        if (patt.test(str))
+            console.log( str + ' is a class\'s name');
+        else console.log( str + ' is not a class\'s name');
+    }
+
+    isClassName('C0318G');
+    isClassName('c0318G');
+    isClassName('C318G');
+    isClassName('Cas0318G');
+    isClassName('M0318G');
+    isClassName('P0323A');
+    isClassName('C0345618G');
+    isClassName('C03sd18G');
+    isClassName('C0318z');
+
+</script>
+</body>
+</html>

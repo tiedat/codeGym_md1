@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>total of first 20 fibonacci</title>
+</head>
+<body>
+<script>
+    let Fibo1, Fibo2, Fibo3, i, total20Fi;
+    Fibo1 = Fibo2 = 1;
+    i = 2;
+    total20Fi = 2;
+
+    do {
+        Fibo3 = Fibo2 + Fibo1;
+        total20Fi += Fibo3;
+        Fibo1 = Fibo2;
+        Fibo2 = Fibo3;
+        i ++;
+    }
+    while ( i < 20 );
+
+    document.write(" This is total of first 20 Fibonacci: "+ total20Fi);
+
+</script>
+</body>
+</html>

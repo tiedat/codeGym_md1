@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<form style="position:absolute; left: 550px; top: 50px">
+    <span> Star </span>
+    <input type="text" id="starName" placeholder="Name of star"
+           oninput="showResult(this.value)"
+           onchange ="showResult(this.value)" >
+    <br>
+    <span> Result: </span>
+    <span id="result"></span>
+</form>
+
+<script>
+    let x = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let y = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let message = '';
+    function showResult(nameStar) {
+        let i = x.indexOf(nameStar);
+        if (i !== -1) {
+            message = x[i] + " is belong to " + y[i];
+        } else message = "No information about " + nameStar;
+        document.getElementById('result').innerHTML = message;
+    }
+</script>
+</body>
+</html>

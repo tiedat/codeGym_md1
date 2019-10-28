@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<script>
+    // Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    let str = prompt('Enter 10 numbers split by ,');
+    let array = str.split(',');
+
+    for ( let i = 0, j = array.length -1 ; i < j; i++, j--) {
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+    }
+    alert(array.toString());
+
+</script>
+</body>
+</html>

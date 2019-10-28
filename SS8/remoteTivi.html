@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remoteTivi</title>
+</head>
+<body>
+<script>
+    let Television = function (name, currentVolume, status) {
+        this.name = name;
+
+        this.channels = ['Channel1', 'Channel2', 'Channel3', 'Channel4', 'Change5'];
+        this.currentChannel = this.channels[0];
+        this.currentVolume = currentVolume;
+        this.status = status;
+        
+        // tăng kênh
+        this.forwardChannel = function () {
+            console.log('Channel: ' + this.currentChannel);
+            let x = this.channels.indexOf(this.currentChannel);
+            if ( x === this.channels.length - 1 )
+                x = -1;
+            this.currentChannel = this.channels[x+1];
+            console.log('Channel: ' + this.currentChannel);
+        };
+        // giảm kênh
+        this.backChannel = function () {
+            console.log('Channel: ' + this.currentChannel);
+            let x = this.channels.indexOf(this.currentChannel);
+            if ( x === 0 )
+                x = this.channels.length;
+            this.currentChannel = this.channels[x-1];
+            console.log('Channel: ' + this.currentChannel);
+        };
+        // di chuyển đến kênh
+        this.switchChannel = function (x) {
+            console.log('Channel: ' + this.currentChannel);
+            this.currentChannel = this.channels[x];
+            console.log('Channel: ' + this.currentChannel);
+        };
+        // tăng volume
+        this.increaseVolume = function () {
+            if (this.currentVolume !== 100) {
+                this.currentVolume++;
+                if ( this.currentVolume > 79 )
+                    console.log(' Becareful, volume is too high ');
+                console.log('Volume: ' + this.currentVolume);
+            } else console.log(' Max Volume 100 ');
+        };
+        
+        // giảm volume
+        this.decreaseVolume = function () {
+            if (this.currentVolume !== 100) {
+                this.currentVolume--;
+                console.log('Volume: ' + this.currentVolume);
+            } else console.log(' Mute ');
+        };
+    };
+    
+    let Remote = function (TV) {
+        this.changeTVChannel = function (x) {
+            if (TV.status) {
+                TV.switchChannel(x);
+            }
+        };
+        this.increaseVolume = function () {
+            if (TV.status) {
+                TV.increaseVolume();
+            }
+        };
+        this.decreaseVolume = function () {
+            if (TV.status) {
+                TV.decreaseVolume();
+            }
+        };
+        this.forwardChannel = function () {
+            if (TV.status) {
+                TV.forwardChannel();
+            }
+        };
+        this.backChannel = function () {
+            if (TV.status) {
+                TV.backChannel();
+            }
+        };
+    };
+
+    // Televison (name, currentVolume, status)
+    let lg = new Television('LG', 50, true);
+    let remote = new Remote(lg);
+
+    remote.forwardChannel();
+    remote.backChannel();
+    remote.decreaseVolume();
+    remote.increaseVolume();
+
+
+
+
+
+
+</script>
+</body>
+</html>

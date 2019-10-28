@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calTotalUntil</title>
+</head>
+<body>
+<script>
+    let x = parseInt(prompt("Input a number: "));
+    let total = 0;
+    total += x;
+    while ( x !== -1 ) {
+        alert(x);
+        x = parseInt(prompt("Input a number: "));
+        total += x;
+    }
+    document.write("Total all input number is: " + total);
+</script>
+</body>
+</html>

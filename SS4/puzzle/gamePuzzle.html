@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle</title>
+</head>
+<body>
+
+<img id="img0" src="" alt="" onclick="randomImage(this)"/><br>
+<img id="img1" src="" alt="" onclick="randomImage(this)"/><br>
+<img id="img2" src="" alt="" onclick="randomImage(this)"/><br>
+<img id="img3" src="" alt="" onclick="randomImage(this)"/><br>
+<img id="img4" src="" alt="" onclick="randomImage(this)"/><br>
+
+<script>
+    let arr = [
+        [ 'blue1.png', 'red1.png', 'yellow1.png'],
+        [ 'blue2.png', 'red2.png', 'yellow2.png'],
+        [ 'blue3.png', 'red3.png', 'yellow3.png'],
+        [ 'blue4.png', 'red4.png', 'yellow4.png'],
+        [ 'blue5.png', 'red5.png', 'yellow5.png'],
+    ];
+    let x, srcImage;
+    for ( let i = 0; i < 5; i++) {
+        x = Math.floor(Math.random()*3);
+        document.getElementById('img' + i).alt = x;
+        srcImage = arr[i][x];
+        document.getElementById('img' + i).src = srcImage;
+    }
+
+
+    function randomImage(img) {
+        for ( let i = 0; i < 5; i++) {
+            if ( img.id === 'img' + i) {
+                srcImage = img.src;
+                do {
+                    x = Math.floor(Math.random()*3);
+                    img.src = arr[i][x];
+                    img.alt = x;
+                }
+                while ( srcImage === 'http://localhost:63342/md1_ss4_gamePuzzle/' + arr[i][x]);
+            }
+        }
+        let a, b, c, d, e;
+        a = document.getElementById('img0').alt;
+        b = document.getElementById('img1').alt;
+        c = document.getElementById('img2').alt;
+        d = document.getElementById('img3').alt;
+        e = document.getElementById('img4').alt;
+        if ( a===b && b===c && c===d && d===e) {
+            alert('Win');
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

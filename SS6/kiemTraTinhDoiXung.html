@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiemTraTinhDoiXung</title>
+</head>
+<body>
+<script>
+    let str = "rdyfjgfr";
+
+    function isPalindrome(s) {
+        let t = s.split("");
+        let k = s.split("").reverse();
+        for (let i = 0; i < k.length; i++) {
+            if (k[i] !== t[i])
+                    return false;
+        } return true;
+    }
+    alert(isPalindrome(str));
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CalculatorApp</title>
+</head>
+<body>
+<p>Calculator</p>
+<div>
+    <form>
+        <label for="firstNumber">First number</label>
+        <br>
+        <input id="firstNumber" type="number"/>
+        <br>
+        <label for="secondNumber">Second number</label>
+        <br>
+        <input id="secondNumber" type="number"/>
+    </form>
+</div>
+
+<div>
+    <button type="button" onclick="cal(this)" value="+">Addition(+)</button>
+    <button type="button" onclick="cal(this)" value="-">Subtraction(-)</button>
+    <button type="button" onclick="cal(this)" value="*">Multiplication(x)</button>
+    <button type="button" onclick="cal(this)" value="/">Division(/)</button>
+</div>
+<br>
+<div>
+    <span>Result: </span>
+    <span id="result"></span>
+</div>
+
+<script src="functionCalculator.js"></script>
+</body>
+</html>

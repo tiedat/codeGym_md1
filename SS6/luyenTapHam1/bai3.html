@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<form style="position:absolute; left: 550px; top: 50px">
+    <span> Number 1 </span>
+    <input type="text" id="number1" placeholder="Enter a number"
+           oninput="compare_displayResult(this.value)"
+           onchange ="compare_displayResult(this.value)" >
+    <br>
+    <span> Number 2 </span>
+    <input type="text" id="number2" placeholder="Enter a number"
+           oninput="compare_displayResult(this.value)"
+           onchange ="compare_displayResult(this.value)" >
+    <br>
+    <span> Result: </span>
+    <span id="result"></span>
+</form>
+
+<script>
+
+    function compare_displayResult(x,y) {
+        x = parseFloat(document.getElementById('number1').value);
+        y = parseFloat(document.getElementById('number2').value);
+        let message, total;
+        message = '';
+        total = x + y;
+        if (isNaN(x) === false && isNaN(y) === false) {
+            if (x > y)
+                message = x + " is bigger than " + y;
+            else {
+                message = " Total of " + x + " and " + y + " is: " + total;
+            }
+        }
+        document.getElementById("result").innerHTML = message;
+    }
+</script>
+</body>
+</html>

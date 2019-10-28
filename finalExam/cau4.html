@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cau4</title>
+</head>
+<body>
+
+<canvas id='canvas' width="700px" height="500px"></canvas>
+
+<script>
+    let Rectangle = function ( x, y, width, height, color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    };
+
+    Rectangle.prototype.render = function (canvas) {
+        let ctx = canvas.getContext('2d');
+        ctx.fillRect( this.x, this.y, this.x + this.width, this.y + this.height );
+    };
+
+    // Rectangle (x, y, width, height, color)
+    let rectangle1 = new Rectangle( 10, 10, 200, 100, '#000000');
+    let targetCanvas = document.getElementById('canvas');
+
+
+    // draw canvas
+    rectangle1.render(targetCanvas);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkAge</title>
+</head>
+<body>
+<script>
+    let age = parseFloat(prompt("Enter a number"));
+
+    if (isNaN(age))
+        document.write(" it is NOT a number");
+    else if ( age !== parseInt(age))
+        document.write(" it is NOT a integer number");
+    else {
+        if ( age <= 0 || age >=120)
+            document.write(" it is NOT an age number");
+        else  document.write(" it is an age number");
+    }
+
+</script>
+</body>
+</html>

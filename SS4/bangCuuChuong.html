@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mulTab</title>
+</head>
+<body>
+<h1> Multiplication Table </h1>
+<p id = "tabl"></p>
+<script>
+    let i, j, mulTab, content;
+    //Declare variable for content in table data
+    content = "";
+    //create table
+    mulTab = "<table border='1px' width='900px' cellspacing='0px' cellpadding='3px'>";
+    for ( i = 1 ; i <= 10; i++) {
+        mulTab += "<tr>";
+        for (j = 1; j <= 10; j++) {
+            content = i + " * " + j + " = " + i * j;
+            mulTab += "<td>" + content + "</td>";
+        }
+        mulTab += "</tr>";
+    }
+    document.getElementById("tabl").innerHTML = mulTab;
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai8</title>
+</head>
+<body>
+<script>
+    // Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    // Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+
+    let array = [];
+
+
+    for ( let i = 0; i < 10; i++) {
+        array[i] = Math.floor(Math.random()*200 - 100);
+    }
+
+    for ( let i = 0; i < 10; i++) {
+        while (array[i] < array[i+1]) {
+            let temp = array[i];
+            array[i] = array[i+1];
+            array[i+1] = temp;
+            i--;
+        }
+    }
+
+    alert(array);
+
+</script>
+</body>
+</html>

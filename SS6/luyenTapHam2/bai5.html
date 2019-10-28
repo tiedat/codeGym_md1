@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<input type="button" onclick="alertMessage()" value="show array and min" style="position: absolute; left: 550px; top: 50px">
+<script>
+let x = [];
+let min;
+let message;
+
+
+function alertMessage() {
+    for (let i = 0; i < 3; i++) {
+        x[i] = Math.floor(Math.random() * 201 - 100);
+    }
+    min = x[0];
+    for (let i = 0; i < 3; i++) {
+        if (x[i + 1] < min)
+            min = x[i + 1];
+    }
+    message = 'Initial Array ' + x.join() + ' , min of array: ' + min;
+    alert(message);
+}
+
+</script>
+</body>
+</html>

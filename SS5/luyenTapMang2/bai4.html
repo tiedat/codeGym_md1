@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bai4</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let x = ' life is woderfull ';
+		let y = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnmm';
+		let count = 1;
+		for ( i = 0; i < x.length; i++) {
+			// console.log (x[i])
+			if (y.indexOf(x[i]) !== -1 && x[i+1] === ' ' && y.indexOf(x[i+2]) !== -1) {
+				count++;
+			}
+		}
+			alert(count);
+	</script>
+</body>
+</html>

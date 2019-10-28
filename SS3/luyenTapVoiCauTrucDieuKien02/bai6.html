@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+<h1> Solve the first order equation ax + b = 0 </h1>
+<script>
+    let a, b, x;
+    a =  Number(prompt("Enter number a:"));
+    b =  Number(prompt("Enter number b:"));
+
+
+    if ( a !== 0 ) {
+        x = b / a;
+        document.write("The equation "+ a + "x" + " + " + b + " has a root: " + "x = " + x);
+    }
+    else if ( a === 0) {
+        if ( b === 0 )
+            document.write("The equation "+ a + "x" + " + " + b + " has unlimited roots ");
+        else document.write("The equation "+ a + "x" + " + " + b + " does have root ");
+    }
+
+
+
+
+</script>
+</body>
+</html>

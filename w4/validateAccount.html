@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validateAccount</title>
+</head>
+<body>
+<script>
+    let patt = /^[_a-z0-9]{6,}$/;
+    function isValidateAccount(account) {
+        if (patt.test(account))
+            console.log(account + ' is valid account');
+        else console.log(account + ' is invalid account');
+    }
+
+    isValidateAccount('123abc_');
+    isValidateAccount('_abc123');
+    isValidateAccount('______');
+    isValidateAccount('123456');
+    isValidateAccount('abcdefg');
+    isValidateAccount('12345');
+    isValidateAccount('1234_');
+    isValidateAccount('abcde ');
+
+
+</script>
+</body>
+</html>

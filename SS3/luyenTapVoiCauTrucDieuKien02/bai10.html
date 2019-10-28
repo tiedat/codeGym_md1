@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculate the price of electricity</title>
+</head>
+<body>
+<script>
+    /* Viết chương trình tính tiền điện gồm các khoảng sau:
+Tiền thuê bao điện kế: 1000đ/tháng
+Định mức sử dụng điện cho mỗi hộ là: 50 KW với giá 230đ/KW
+Nếu phần vượt định mức <= 50KW thì tính giá 480đ/KW
+Nếu 50KW < phần vượt định mức < 100KW thì tính giá 700đ/KW
+Nếu phần vượt định mức > 100KW thì tính giá 900đ/KW*/
+
+    let enCo = parseFloat(prompt("Enter your energy consumption: "));
+    let priceE = 1000;
+
+    if ( enCo > 0 ) {
+        if (enCo > 50) {
+            if (enCo > 100) {
+                if (enCo > 150) {
+                    priceE += (enCo - 150) * 900 + 50 * (230 + 480 + 700);
+                } else priceE += (enCo - 100) * 700 + 50 * (230 + 480);
+            } else priceE += (enCo - 50) * 480 + 50 * 230;
+        } else priceE += enCo * 230;
+    }
+
+    alert("This is your electric price: "+ priceE)
+
+</script>
+
+</body>
+</html>

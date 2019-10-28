@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinhGiaiThua</title>
+</head>
+<body>
+<script>
+    let x, i, factorialx;
+    factorialx = 1;
+
+    while (isNotPositiveInterger()) {
+        x = parseFloat(prompt("Enter a positive integer number: "));
+        if (isNotPositiveInterger())
+            alert("Invalid number");
+    }
+    for ( i = 1; i <= x; i++) {
+        factorialx *= i;
+    }
+
+    function isNotPositiveInterger() {
+        if ( isNaN(x))
+            return true;
+        else if ( x !== parseInt(x))
+            return true;
+        else if ( x < 0)
+            return true;
+        else return false;
+    }
+    document.write(" factorial " + x + " is: " + factorialx);
+</script>
+</body>
+</html>

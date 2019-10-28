@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoYouLoveMe</title>
+</head>
+<body>
+<h1 style="text-align: center;">Do you love me?</h1>
+<input type="button" value=" YES " onclick="clickYes()" style="position:absolute; left:570px; top:100px;"/>
+<input type="button" id="moveIt" value="  NO  " onmouseover="movePosition()" style="position:absolute; left:920px; top:100px;"/>
+
+<script>
+    function clickYes()
+    {
+        alert("Yes. you are right ");
+    }
+    // 1st method <input onmouseover="movePosition()">
+    // 2nd method document.getElementById("btnNo").onmouseover = function () {movePosition()};
+    // 3rd method document.getElementById("btnNo").addEventListener("mouseover", movePosition)
+
+    function movePosition()
+    {
+        let x = Math.round(Math.random() * window.innerWidth);
+        let y = Math.round(Math.random() * window.innerHeight);
+        document.getElementById('moveIt').style.left = x + 'px';
+        document.getElementById('moveIt').style.top = y + 'px';
+    }
+
+
+
+
+</script>
+</body>
+</html>

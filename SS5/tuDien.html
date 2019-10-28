@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tuDien</title>
+</head>
+<body>
+<script>
+    let vietDic = [
+        "từ điển", "con chó", "con mèo", "cái bàn"
+    ], engDic = [
+        "dictionary", "dog", 'cat', 'table'
+    ];
+
+    let x = prompt("enter text");
+
+    if ( vietDic.indexOf(x) !== -1 || engDic.indexOf(x) !== -1) {
+        if (vietDic.indexOf(x) !== -1)
+            alert("Meaning : " + engDic[vietDic.indexOf(x)]);
+        else alert("Nghĩa là: " + vietDic[engDic.indexOf(x)]);
+    } else alert("NOT FOUND");
+</script>
+</body>
+</html>

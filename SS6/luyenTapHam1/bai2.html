@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<form style="position:absolute; left: 450px; top: 50px;">
+    <input type="number" id="argument" placeholder="argument"
+            oninput="add1_displayResult(this.value)"
+            onchange ="add1_displayResult(this.value)" >
+    <span> Result of adding 1 to argument: </span>
+    <span id="outputAdd1"></span>
+</form>
+
+<script>
+
+    function add1_displayResult(valNum) {
+        valNum = parseFloat(valNum);
+        valNum++;
+        document.getElementById("outputAdd1").innerHTML = valNum;
+    }
+</script>
+</body>
+</html>

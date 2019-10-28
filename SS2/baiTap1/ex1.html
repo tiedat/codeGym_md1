@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise 1</title>
+</head>
+<body>
+<h1>input score, output total score and average</h1>
+<script>
+    let inputPhy;
+    let inputChe;
+    let inputBio;
+    let totalscore;
+    let averagescore;
+    inputPhy=prompt('enter Phy score: ');
+    inputChe=prompt('enter Che score: ');
+    inputBio=prompt('enter Bio score: ');
+    phy=Number(inputPhy);
+    che=Number(inputChe);
+    bio=Number(inputBio);
+    totalscore=phy+che+bio;
+    averagescore= totalscore/3;
+    document.write("Total score: "+ totalscore);
+    document.write('<br/>');
+    document.write('Average score:'+averagescore);
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>primeNumber</title>
+</head>
+<body>
+<h1>Prime Numbers</h1>
+<p id="priNumTab"></p>
+
+<script>
+    //declare x is amount of prime number you want to show
+    let x = parseInt(prompt("How many prime number do you want to see: "));
+    //declare i is amount to count prime number with init value is 0
+    let count = 0;
+    //declare priNub is value of prime number with init value is 2
+    let priNum = 2;
+    //declare message is display screen
+    let message = "";
+
+    //loop for count prime numbers
+    while (count < x) {
+        if (isPrime()){
+            count++;
+            message += priNum + "---";
+        }
+        priNum++;
+    }
+
+
+    //create function test prime number
+    function isPrime() {
+        for (let j = 2 ; j <= Math.sqrt(priNum) ; j++) {
+            if ( priNum % j === 0)
+                return false;
+        }
+        return true;
+    }
+
+    document.getElementById("priNumTab").innerHTML = "there are " + x + " first prime numbers: " + message;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkTrianglesSide</title>
+</head>
+<body>
+<script>
+    let number1 = parseFloat(prompt("Enter first number"));
+    let number2 = parseFloat(prompt("Enter second number"));
+    let number3 = parseFloat(prompt("Enter third number"));
+
+    function is3Side() {
+        if (number1 <= 0 || number2 <= 0 || number3 <= 0)
+            return false;
+        else {
+            if ( number1 + number2 > number3) {
+                if (number1 + number3 > number2) {
+                    if (number2 + number3 > number1)
+                        return true;
+                } return false;
+            } return false;
+        } return false;
+    }
+
+    if (is3Side()) {
+        alert(" there are 3 sides of a triangle")
+    } else alert(" there a not 3 side of a triangle")
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiemTraMaUSA</title>
+</head>
+<body>
+<script>
+
+    function is_usZipCode(str) {
+        let regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
+       return regexp.test(str);
+    }
+    // (?:) so khớp phần tử sau : với một điều kiện nào đó theo sau )
+    let zipcode = '03201-2150';
+    console.log(is_usZipCode(zipcode));
+    zipcode = '78923';
+    console.log(is_usZipCode(zipcode));
+</script>
+</body>
+</html>
